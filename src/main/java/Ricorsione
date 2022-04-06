@@ -1,0 +1,55 @@
+M-A-R-E
+
+1) LIVELLO: numero di lettere gia' aggiunte alla mia soluzione parziale. All'inizio
+siamo al livello 0 e la soluzione parziale e' una stringa vuota. Al livello 1 
+avremo aggiunto una lettera alla mia soluzione parziale e il numero di lettere
+ancora utilizzabili per comporre una permutazione sara' diminuito di 1. 
+2) CASI TERMINALI: livello pari alla lunghezza della parola iniziale da anagrammare
+
+(*) lettereRimanenti = "ARE" --> "AE"
+lettereRimanenti.substring(0,indice)+lettereRimanenti.substring(indice+1)
+lettereRimanenti.substring(0,indiceEliminato)+letteraEliminata+lettereRimanenti.substring(indiceEliminato+1)
+LEVEL 1
+	{M}
+	LEVEL 2
+		{M,A}
+		LEVEL 3
+			{M,A,R}
+				LEVEL 4
+					{M,A,R,E}
+		LEVEL 3
+			{M,A,E}
+				LEVEL 4
+					{M,A,E,R}
+	LEVEL 2
+		{M,R}	// aggiungo R alla soluzione parziale. Tolgo R alle lettere rimanenti (*)
+		LEVEL 3
+			{M,R,A}
+				LEVEL 4
+					{M,R,A,E}
+		LEVEL 3
+			{M,R,E}
+				LEVEL 4
+					{M,R,E,A}
+	LEVEL 2
+		{M,E}
+		LEVEL 3
+			{M,E,A}
+				LEVEL 4
+					{M,E,A,R}
+		LEVEL 3
+			{M,E,R}
+				LEVEL 4
+					{M,E,R,A}
+---
+LEVEL 1
+	{A}
+	[...]
+---
+LEVEL 1
+	{R}
+	[...]
+---
+LEVEL 1
+	{E}
+	[...]
